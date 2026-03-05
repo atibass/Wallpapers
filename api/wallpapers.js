@@ -46,14 +46,14 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 const cols=3
 const rows=4
 const gap=30
-const r=10
+const r=8
 
 const gridH=1200
 const monthW=gap*(7+2)
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+40
-const startY=600
+const startY=1000
 
 const monthX=gridW/cols
 const monthY=gridH/rows
