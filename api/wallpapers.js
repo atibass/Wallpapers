@@ -82,7 +82,7 @@ let my=startY+row*monthY
 
 ctx.save()
 ctx.fillStyle="#9a9a9a"
-ctx.fillText(months[m],mx,my-30)
+ctx.fillText(months[m],mx-10,my-30)
 ctx.restore()
 
 let first=new Date(year,m,1).getDay()
@@ -124,7 +124,7 @@ ctx.textBaseline="middle"
 ctx.fillStyle="#bbbbbb"
 ctx.font="32px Inter"
 
-ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH-20)
+ctx.fillText(`${left}d left · ${percent}%`,W/2,startY+gridH-20)
 
 // cache
 res.setHeader("Cache-Control","public, max-age=600")
