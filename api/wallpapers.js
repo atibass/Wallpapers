@@ -117,7 +117,7 @@ const percent=Math.floor(d/total*100)
 
 ctx.textAlign="center"
 ctx.textBaseline="middle"
-ctx.fillStyle="#ff7a3c"
+ctx.fillStyle="#bbbbbb"
 ctx.font="38px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+10)
