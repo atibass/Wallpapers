@@ -97,7 +97,7 @@ let w=date.getDay()
 
 let color=
 same(date,today) ? "#ff7a3c" :
-holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
+holiday ? (date<today?"#ffff00":"#4a1f1f") :
 (w==0||w==6) ? (date<today?"#bbbbbb":"#2a2a2a") :
 (date<today?"#ffffff":"#3a3a3a")
 
@@ -118,7 +118,7 @@ const percent=Math.floor(d/total*100)
 ctx.textAlign="center"
 ctx.textBaseline="middle"
 ctx.fillStyle="#bbbbbb"
-ctx.font="30px Inter"
+ctx.font="32px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+10)
 
