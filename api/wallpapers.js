@@ -52,20 +52,19 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 const cols=3
 const rows=4
 const gap=30
-const r=8
+const r=10
 
 const gridH=1200
 const monthW=gap*(7+2)
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+40
-const startY=1000
+const startY=1200
 
 const monthX=gridW/cols
 const monthY=gridH/rows
 
 ctx.font="32px Inter"
-ctx.fillStyle="#9a9a9a"
 
 // calendar
 for(let m=0;m<12;m++){
@@ -76,7 +75,11 @@ let row=Math.floor(m/cols)
 let mx=startX+col*monthX
 let my=startY+row*monthY
 
+// เดือน (fix สี)
+ctx.save()
+ctx.fillStyle="#9a9a9a"
 ctx.fillText(months[m],mx-10,my-30)
+ctx.restore()
 
 let first=new Date(year,m,1).getDay()
 let days=new Date(year,m+1,0).getDate()
