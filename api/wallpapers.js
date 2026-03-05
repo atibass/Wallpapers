@@ -1,10 +1,13 @@
 import { createCanvas, GlobalFonts } from "@napi-rs/canvas"
 import path from "path"
 
+// register font ครั้งเดียว
+if (!GlobalFonts.families.includes("Inter")) {
 GlobalFonts.registerFromPath(
   path.join(process.cwd(), "fonts/Inter-Regular.otf"),
   "Inter"
 )
+}
 
 export default function handler(req, res) {
 
@@ -21,7 +24,8 @@ const H = height
 ctx.fillStyle="#0f0f0f"
 ctx.fillRect(0,0,W,H)
 
-const today=new Date()
+// timezone ไทย
+const today=new Date(Date.now()+7*60*60*1000)
 const year=today.getFullYear()
 
 // holidays
@@ -58,7 +62,7 @@ const gridH=1200
 const monthW = gap * 8
 const gridW=monthW*cols
 
-const startX=(W-gridW)/2+42
+const startX=(W-gridW)/2+41
 const startY=1000
 
 const monthX=gridW/cols
@@ -75,7 +79,6 @@ let row=Math.floor(m/cols)
 let mx=startX+col*monthX
 let my=startY+row*monthY
 
-// เดือน (fix สี)
 ctx.save()
 ctx.fillStyle="#9a9a9a"
 ctx.fillText(months[m],mx-10,my-30)
@@ -89,8 +92,9 @@ for(let d=1;d<=days;d++){
 let date=new Date(year,m,d)
 let i=first+d-1
 
-let x=mx+(i%7)*gap
-let y=my+Math.floor(i/7)*gap
+// round pixel ให้ dot คม
+let x=Math.round(mx+(i%7)*gap)
+let y=Math.round(my+Math.floor(i/7)*gap)
 
 let holiday=holidaySet.has(fmt(date))
 let w=date.getDay()
@@ -121,6 +125,9 @@ ctx.fillStyle="#bbbbbb"
 ctx.font="32px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+10)
+
+// cache header
+res.setHeader("Cache-Control","public, max-age=3600")
 
 // output
 res.setHeader("Content-Type","image/png")
