@@ -52,13 +52,13 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 const cols=3
 const rows=4
 const gap=35
-const r=10
+const r=9
 
 const gridH=1200
 const monthW = gap * 8
 const gridW=monthW*cols
 
-const startX=(W-gridW)/2+55
+const startX=(W-gridW)/2+50
 const startY=1000
 
 const monthX=gridW/cols
@@ -118,7 +118,7 @@ const percent=Math.floor(d/total*100)
 ctx.textAlign="center"
 ctx.textBaseline="middle"
 ctx.fillStyle="#bbbbbb"
-ctx.font="35px Inter"
+ctx.font="30px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+10)
 
