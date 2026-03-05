@@ -120,7 +120,7 @@ ctx.textBaseline="middle"
 ctx.fillStyle="#ff7a3c"
 ctx.font="38px Inter"
 
-ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+110)
+ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+10)
 
 // output
 res.setHeader("Content-Type","image/png")
