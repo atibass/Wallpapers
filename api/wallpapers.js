@@ -55,6 +55,7 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 const cols=3
 const rows=4
 const gap=35
+const r=9
 
 const gridH=1200
 const monthW = gap * 8
@@ -77,10 +78,9 @@ let row=Math.floor(m/cols)
 let mx=startX+col*monthX
 let my=startY+row*monthY
 
-// month label
 ctx.save()
 ctx.fillStyle="#9a9a9a"
-ctx.fillText(months[m],mx,my-30)
+ctx.fillText(months[m],mx-10,my-30)
 ctx.restore()
 
 let first=new Date(year,m,1).getDay()
@@ -103,12 +103,10 @@ holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 (w==0||w==6) ? (date<today?"#bbbbbb":"#2a2a2a") :
 (date<today?"#ffffff":"#3a3a3a")
 
+ctx.beginPath()
+ctx.arc(x,y,r,0,Math.PI*2)
 ctx.fillStyle=color
-ctx.textAlign="center"
-ctx.textBaseline="middle"
-ctx.font="20px Inter"
-
-ctx.fillText(d,x,y)
+ctx.fill()
 
 }
 }
