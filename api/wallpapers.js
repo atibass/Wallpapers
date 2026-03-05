@@ -32,7 +32,7 @@ let holidaySet = new Set()
 
 try{
 
-const r = await fetch("https://opensheet.elk.sh/1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg/DayOff")
+const r = await fetch("https://opensheet.elk.sh/1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg/DayOff?t="+Date.now())
 const json = await r.json()
 
 holidaySet = new Set(json.map(d=>d.DayOff))
@@ -125,7 +125,7 @@ ctx.font="32px Inter"
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH-20)
 
 // cache
-res.setHeader("Cache-Control","public, max-age=3600")
+res.setHeader("Cache-Control","no-store")
 
 // output
 res.setHeader("Content-Type","image/png")
