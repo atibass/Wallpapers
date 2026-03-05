@@ -59,7 +59,7 @@ const monthW=gap*(7+2)
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+40
-const startY=1200
+const startY=1100
 
 const monthX=gridW/cols
 const monthY=gridH/rows
@@ -118,7 +118,7 @@ const percent=Math.floor(d/total*100)
 ctx.textAlign="center"
 ctx.textBaseline="middle"
 ctx.fillStyle="#ff7a3c"
-ctx.font="40px Inter"
+ctx.font="38px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+110)
 
