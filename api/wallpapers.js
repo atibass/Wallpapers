@@ -53,7 +53,7 @@ const monthW=gap*(7+2)
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+40
-const startY=380
+const startY=600
 
 const monthX=gridW/cols
 const monthY=gridH/rows
