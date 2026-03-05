@@ -122,7 +122,7 @@ ctx.textBaseline="middle"
 ctx.fillStyle="#bbbbbb"
 ctx.font="32px Inter"
 
-ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH-20)
+ctx.fillText(`${left}d left · ${percent}%`,W/2,startY+gridH-20)
 
 // cache
 res.setHeader("Cache-Control","public, max-age=600")
