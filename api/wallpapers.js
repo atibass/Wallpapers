@@ -12,6 +12,7 @@ export default async function handler(req, res) {
 
 const width = parseInt(req.query.width) || 1290
 const height = parseInt(req.query.height) || 2796
+const sheetid = req.query.sheetid || "1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg"
 
 const canvas = createCanvas(width,height)
 const ctx = canvas.getContext("2d")
@@ -27,12 +28,13 @@ ctx.fillRect(0,0,W,H)
 const today=new Date(Date.now()+7*60*60*1000)
 const year=today.getFullYear()
 
-// ===== โหลดวันหยุดจาก JSON =====
+// ===== โหลดวันหยุด =====
 let holidaySet = new Set()
 
 try{
 
-const r = await fetch("https://opensheet.elk.sh/1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg/DayOff")
+const url = `https://opensheet.elk.sh/${sheetid}/DayOff`
+const r = await fetch(url)
 const json = await r.json()
 
 holidaySet = new Set(json.map(d=>d.DayOff))
@@ -80,7 +82,7 @@ let my=startY+row*monthY
 
 ctx.save()
 ctx.fillStyle="#9a9a9a"
-ctx.fillText(months[m],mx-10,my-30)
+ctx.fillText(months[m],mx,my-30)
 ctx.restore()
 
 let first=new Date(year,m,1).getDay()
@@ -122,7 +124,7 @@ ctx.textBaseline="middle"
 ctx.fillStyle="#bbbbbb"
 ctx.font="32px Inter"
 
-ctx.fillText(`${left}d left · ${percent}%`,W/2,startY+gridH-20)
+ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH-20)
 
 // cache
 res.setHeader("Cache-Control","public, max-age=600")
