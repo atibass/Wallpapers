@@ -58,7 +58,7 @@ const gridH=1200
 const monthW = gap * 8
 const gridW=monthW*cols
 
-const startX=(W-gridW)/2+48
+const startX=(W-gridW)/2+40
 const startY=1000
 
 const monthX=gridW/cols
