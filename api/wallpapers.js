@@ -1,4 +1,10 @@
-import { createCanvas } from "@napi-rs/canvas"
+import { createCanvas, GlobalFonts } from "@napi-rs/canvas"
+import path from "path"
+
+GlobalFonts.registerFromPath(
+  path.join(process.cwd(), "fonts/Inter-Regular.ttf"),
+  "Inter"
+)
 
 export default function handler(req, res) {
 
@@ -46,19 +52,20 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 const cols=3
 const rows=4
 const gap=30
-const r=8
+const r=10
 
 const gridH=1200
 const monthW=gap*(7+2)
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+40
-const startY=1000
+const startY=380
 
 const monthX=gridW/cols
 const monthY=gridH/rows
 
-ctx.font="32px sans-serif"
+ctx.font="32px Inter"
+ctx.fillStyle="#9a9a9a"
 
 // calendar
 for(let m=0;m<12;m++){
@@ -69,7 +76,6 @@ let row=Math.floor(m/cols)
 let mx=startX+col*monthX
 let my=startY+row*monthY
 
-ctx.fillStyle="#9a9a9a"
 ctx.fillText(months[m],mx-10,my-30)
 
 let first=new Date(year,m,1).getDay()
@@ -109,7 +115,7 @@ const percent=Math.floor(d/total*100)
 ctx.textAlign="center"
 ctx.textBaseline="middle"
 ctx.fillStyle="#ff7a3c"
-ctx.font="40px sans-serif"
+ctx.font="40px Inter"
 
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH+110)
 
