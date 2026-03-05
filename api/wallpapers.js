@@ -2,7 +2,7 @@ import { createCanvas, GlobalFonts } from "@napi-rs/canvas"
 import path from "path"
 
 GlobalFonts.registerFromPath(
-  path.join(process.cwd(), "fonts/Inter-Regular.ttf"),
+  path.join(process.cwd(), "fonts/Inter-Regular.otf"),
   "Inter"
 )
 
