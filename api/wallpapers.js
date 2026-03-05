@@ -125,7 +125,7 @@ ctx.font="32px Inter"
 ctx.fillText(`${left}d · ${percent}%`,W/2,startY+gridH-20)
 
 // cache
-res.setHeader("Cache-Control","no-store")
+res.setHeader("Cache-Control","public, max-age=600")
 
 // output
 res.setHeader("Content-Type","image/png")
