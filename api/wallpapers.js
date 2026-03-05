@@ -51,7 +51,7 @@ const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 
 const cols=3
 const rows=4
-const gap=30
+const gap=40
 const r=10
 
 const gridH=1200
