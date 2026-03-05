@@ -96,8 +96,8 @@ let holiday=holidaySet.has(fmt(date))
 let w=date.getDay()
 
 let color=
-same(date,today) ? "#ff7a3c" :
-holiday ? (date<today?"#ffff00":"#4a1f1f") :
+same(date,today) ? "#ffff00" :
+holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 (w==0||w==6) ? (date<today?"#bbbbbb":"#2a2a2a") :
 (date<today?"#ffffff":"#3a3a3a")
 
