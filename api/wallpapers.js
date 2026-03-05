@@ -106,7 +106,7 @@ holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 ctx.fillStyle=color
 ctx.textAlign="center"
 ctx.textBaseline="middle"
-ctx.font="18px Inter"
+ctx.font="24px Inter"
 
 ctx.fillText(d,x,y)
 
