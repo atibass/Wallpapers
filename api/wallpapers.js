@@ -55,7 +55,7 @@ const gap=35
 const r=10
 
 const gridH=1200
-const monthW=gap*(7+2)
+const monthW = gap * 7
 const gridW=monthW*cols
 
 const startX=(W-gridW)/2+55
@@ -78,7 +78,7 @@ let my=startY+row*monthY
 // เดือน (fix สี)
 ctx.save()
 ctx.fillStyle="#9a9a9a"
-ctx.fillText(months[m],mx-10,my-10)
+ctx.fillText(months[m],mx-10,my-30)
 ctx.restore()
 
 let first=new Date(year,m,1).getDay()
