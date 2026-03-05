@@ -32,7 +32,7 @@ let holidaySet = new Set()
 
 try{
 
-const r = await fetch("https://opensheet.elk.sh/1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg/DayOff?t="+Date.now())
+const r = await fetch("https://opensheet.elk.sh/1PcO5Suopug9jvrLzB61NAKK10U_IIEOwPVe4HpVONfg/DayOff")
 const json = await r.json()
 
 holidaySet = new Set(json.map(d=>d.DayOff))
