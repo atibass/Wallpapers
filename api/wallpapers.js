@@ -80,7 +80,7 @@ let my=startY+row*monthY
 // month label
 ctx.save()
 ctx.fillStyle="#9a9a9a"
-ctx.fillText(months[m],mx-10,my-30)
+ctx.fillText(months[m],mx,my-30)
 ctx.restore()
 
 let first=new Date(year,m,1).getDay()
@@ -106,7 +106,7 @@ holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 ctx.fillStyle=color
 ctx.textAlign="center"
 ctx.textBaseline="middle"
-ctx.font="24px Inter"
+ctx.font="20px Inter"
 
 ctx.fillText(d,x,y)
 
