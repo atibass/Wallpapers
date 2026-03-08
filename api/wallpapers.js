@@ -99,8 +99,11 @@ let y=Math.round(my+Math.floor(i/7)*gap)
 let holiday=holidaySet.has(fmt(date))
 let w=date.getDay()
 
+let isToday = same(date,today)
+
 let color=
-same(date,today) ? "#ffff00" :
+(isToday && holiday) ? "#ff00ff" :
+isToday ? "#ffff00" :
 holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 (w==0||w==6) ? (date<today?"#bbbbbb":"#2a2a2a") :
 (date<today?"#ffffff":"#3a3a3a")
