@@ -102,7 +102,7 @@ let w=date.getDay()
 let isToday = same(date,today)
 
 let color=
-(isToday && holiday) ? "#ff00ff" :
+(isToday && holiday) ? "#ff8c00" :
 isToday ? "#ffff00" :
 holiday ? (date<today?"#ff3b3b":"#4a1f1f") :
 (w==0||w==6) ? (date<today?"#bbbbbb":"#2a2a2a") :
